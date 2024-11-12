@@ -12,16 +12,9 @@ import {
   message,
 } from "antd";
 import { PlusOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import type { Module, Product } from "../types";
+import type { Module, ModuleFormData } from "../types";
 import { moduleStore } from "@/store/moduleStore";
 import { productStore } from "@/store/productStore";
-
-interface ModuleFormData {
-  name: string;
-  price: number;
-  product_id: number;
-  module_status: string;
-}
 
 const Modules: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);

@@ -61,6 +61,13 @@ export interface Module {
   module_status: string;
 }
 
+export interface ModuleFormData {
+  name: string;
+  price: number;
+  product_id: number;
+  module_status: string;
+}
+
 export interface TenantPlan {
   tenant_id: number;
   plan_id: number;
