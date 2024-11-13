@@ -12,7 +12,7 @@ import {
 } from "antd";
 import { PlusOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import type { Plan, PlanFormData } from "../types";
-import { planStore } from "@/store/itemStore";
+import { planStore } from "@/store/planStore";
 
 const { RangePicker } = DatePicker;
 

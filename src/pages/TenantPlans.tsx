@@ -14,6 +14,8 @@ import {
 import { PlusOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import type { TenantPlan, Plan } from "../types";
 import dayjs from "dayjs";
+import { planStore } from "@/store/planStore";
+import { tenantPlansStore } from "@/store/tenantPlansStore";
 
 interface TenantPlanFormData {
   tenant_code: string;
@@ -28,28 +30,10 @@ const TenantPlans: React.FC = () => {
   );
   const [form] = Form.useForm();
 
-  // Mock data - replace with actual API calls
-  const [tenantPlans, setTenantPlans] = useState<TenantPlan[]>([
-    {
-      tenant_id: 1,
-      plan_id: 1,
-      tenant_code: "AIA_HK",
-      assigned_at: "2024-01-01",
-    },
-  ]);
+  const tenantPlans = tenantPlansStore((state) => state.tenantPlans);
+  const setTenantPlans = tenantPlansStore((state) => state.setTenantPlans);
 
-  // Mock plans for plan selection
-  const [plans] = useState<Plan[]>([
-    {
-      plan_id: 1,
-      name: "Basic Plan",
-      discount_rate: 0,
-      start_date: "2024-01-01",
-      end_date: "2024-12-31",
-      plan_type: "SUBSCRIPTION",
-      plan_status: "ACTIVE",
-    },
-  ]);
+  const plans = planStore((state) => state.plans);
 
   const columns = [
     {

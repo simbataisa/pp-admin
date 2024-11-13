@@ -6,7 +6,7 @@ import {
   BoxPlotOutlined,
   AppstoreAddOutlined,
 } from "@ant-design/icons"; // Removed TeamOutlined
-import { planStore } from "@/store/itemStore";
+import { planStore } from "@/store/planStore";
 import { productStore } from "@/store/productStore";
 import { packageStore } from "@/store/packageStore";
 import { moduleStore } from "@/store/moduleStore";
